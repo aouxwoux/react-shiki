@@ -1,5 +1,13 @@
 # react-shiki
 
+## 0.10.2
+
+### Patch Changes
+
+- Fix: rename the CSS cascade layer from `base` to `react-shiki`. Tailwind v3's PostCSS plugin reserves `@layer base` as a directive, so react-shiki's CSS failed to compile in Tailwind v3 apps. A dedicated layer name passes through untouched. _[`#169`](https://github.com/AVGVSTVS96/react-shiki/pull/169) [`1eaf27c`](https://github.com/avgvstvs96/react-shiki/commit/1eaf27cdc63a3d8fe5f5e253fe701a3314e78b72) [@AVGVSTVS96](https://github.com/AVGVSTVS96)_
+
+  If you rely on layer ordering (e.g. overriding react-shiki defaults with Tailwind v4 utilities), declare the order in your stylesheet: `@layer react-shiki, theme, base, components, utilities;`
+
 ## 0.10.1
 
 ### Patch Changes
